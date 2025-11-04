@@ -1,0 +1,51 @@
+Primeiro teste: Ping no IP 8.8.8.8 (servidor DNS público do Google).
+- Serve como verificação da conectividade geral com a Internet.
+
+Se o PC não consegue nem pingar o Google, não adianta tentar conectar no stream.
+
+Segundo teste: faz um HEAD HTTP na streamUrl.
+- Isso não baixa o áudio, apenas testa se o servidor responde (status 200 OK).
+- Checa se o servidor de stream está disponível
+	> Retorna true se ambos passarem, senão false.
+
+Problema de uso do 8.8.8.8
+
+O IP do google não tem relação direta com o servidor de stream do rádio.
+
+Função StreamReachable confiando apenas no HTTP (HEAD) da requisição:
+
+private async Task<bool> StreamReachableAsync()
+{
+    try
+    {
+        var handler = new HttpClientHandler { AllowAutoRedirect = true };
+        using var http = new HttpClient(handler)
+        {
+            Timeout = TimeSpan.FromSeconds(3)
+        };
+        http.DefaultRequestHeaders.ConnectionClose = true;
+
+        using var response = await http.SendAsync(new HttpRequestMessage(HttpMethod.Head, streamUrl));
+        return response.IsSuccessStatusCode;
+    }
+    catch
+    {
+        return false;
+    }
+}
+
+Função ScheduleReconnect está garantindo uma reconexão ocorra por vez. 
+- Para o Player Atual com a função StopStream...
+- Entra num loop tentando reconectar:
+    > Faz StreamReachableAsync().
+    > Se OK -> Espera 1segndo, reinicia o player e sai do loop.
+
+Se falha, dobra o tempo de espera (retryDelaySeconds *= 2), até um limite (maxRetryDelaySeconds).
+
+
+Função NetworkAvailabilityChangedHandler:
+- Ele detecta quando o Windows percebe perda ou retorno da rede.
+- Mas esse evento pode disparar até com mudanças pequenas de rede como fizemos com troca de Wi-Fi e até perda momentânea de pacote.
+
+Função NetworkTimer_Tick:
+- Esse timer roda a cada 10 segundos para verificar se o stream ainda responde, se não responde -> força reconexão.

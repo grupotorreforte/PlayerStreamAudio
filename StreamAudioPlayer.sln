@@ -1,0 +1,45 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36203.30
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "StreamAudioPlayer", "StreamAudioPlayer\StreamAudioPlayer.csproj", "{C15F537A-714B-43BA-A0A7-1700E90CDBD5}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "SetupProject", "SetupProject\SetupProject.vdproj", "{34AB757A-BA4F-F52C-C103-667695FDFA40}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x86 = Debug|x86
+		DefaultBuild|Any CPU = DefaultBuild|Any CPU
+		DefaultBuild|x86 = DefaultBuild|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.Debug|x86.Build.0 = Debug|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.DefaultBuild|Any CPU.ActiveCfg = Release|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.DefaultBuild|Any CPU.Build.0 = Release|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.DefaultBuild|x86.ActiveCfg = Release|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.DefaultBuild|x86.Build.0 = Release|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.Release|x86.ActiveCfg = Release|Any CPU
+		{C15F537A-714B-43BA-A0A7-1700E90CDBD5}.Release|x86.Build.0 = Release|Any CPU
+		{34AB757A-BA4F-F52C-C103-667695FDFA40}.Debug|Any CPU.ActiveCfg = Debug
+		{34AB757A-BA4F-F52C-C103-667695FDFA40}.Debug|x86.ActiveCfg = Debug
+		{34AB757A-BA4F-F52C-C103-667695FDFA40}.DefaultBuild|Any CPU.ActiveCfg = Release
+		{34AB757A-BA4F-F52C-C103-667695FDFA40}.DefaultBuild|x86.ActiveCfg = Release
+		{34AB757A-BA4F-F52C-C103-667695FDFA40}.Release|Any CPU.ActiveCfg = Release
+		{34AB757A-BA4F-F52C-C103-667695FDFA40}.Release|x86.ActiveCfg = Release
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {145CD9A8-9C23-4A6A-AD41-897D517A1CCA}
+	EndGlobalSection
+EndGlobal
